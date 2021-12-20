@@ -1,4 +1,4 @@
-import setStyle from './utils/utils.js'
+import setStyle from '../utils/utils.js'
 
 class Form {
     constructor(){

@@ -1,5 +1,4 @@
 import Game from './Game.js';
-import StopWatch from './StopWatch.js';
 
 window.addEventListener('load', function() {
     this.document.body.style.display = 'flex';

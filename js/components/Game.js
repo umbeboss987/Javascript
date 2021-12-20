@@ -1,5 +1,5 @@
 import Main from './Main.js'
-import setStyle from './utils/utils.js'
+import setStyle from '../utils/utils.js'
 import Form from './Form.js'
 
 

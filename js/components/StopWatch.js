@@ -1,4 +1,4 @@
-import setStyles from './utils/utils.js'
+import setStyles from '../utils/utils.js'
 
 class StopWatch {
 

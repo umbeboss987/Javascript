@@ -1,5 +1,5 @@
 import Deck from './Deck.js';
-import setStyle from './utils/utils.js'
+import setStyle from '../utils/utils.js'
 import StopWatch from './StopWatch.js';
 
 
@@ -81,7 +81,7 @@ class Main {
                     borderRadius: '10px',
                 });
                 cover.setAttribute('id', 'cover')
-                cover.src = 'human-brain.svg'
+                cover.src = './assets/human-brain.svg'
                 card.appendChild(cover);
             })
 

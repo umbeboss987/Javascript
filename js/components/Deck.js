@@ -1,5 +1,5 @@
 import Card from "./Card.js"
-import {emoji} from "./utils/constants.js"
+import {emoji} from "../utils/constants.js"
 
 export default class Deck {
    
