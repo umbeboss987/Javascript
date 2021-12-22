@@ -13,7 +13,6 @@ class StopWatch {
         let minutes = 0;
         const stopWatch = document.createElement('div');
         const minute = document.createElement('div');
-        const second = document.createElement('div');
 
         setStyles(minute,{
             heigth: '70px',
@@ -23,23 +22,14 @@ class StopWatch {
             verticalAlign: 'middle',
             lineHeight: '60px'    
         })
-        setStyles(second,{
-            heigth: '70px',
-            width: '100px',
-            borderLeft : '1px solid black',
-            textAlign : 'center',
-            fontSize: '30px',
-            verticalAlign: 'middle',
-            lineHeight: '60px'    
-
-        })
         setStyles(stopWatch,{
-            width: '200px',
+            width: '100px',
             height: '70px',
             display: 'flex',
             backgroundColor : 'rgb(46,207,237)',
             borderRadius : '15px',
-            border : 'none'
+            border : 'none',
+            position : 'absolute',
         })
        if(!this.stop){
             setInterval(() =>{
@@ -49,12 +39,10 @@ class StopWatch {
                         seconds = 0;
                     }
 
-                    minute.innerHTML = minutes;
-                    second.innerHTML = seconds
+                    minute.innerHTML = minutes + ':' + seconds;
             },1000);
         }
         stopWatch.appendChild(minute);
-        stopWatch.appendChild(second); 
         
         return stopWatch;
     }

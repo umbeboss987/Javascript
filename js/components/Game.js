@@ -17,12 +17,14 @@ class Game {
          setStyle(div,{
             zIndex: '0',
             backgroundColor: 'rgba(255, 255, 255, 0.9)',
-            heigth: '100vh',
+            height: '100vh',
             width: '100vw',
-            position: 'relative',
+            position: 'absolute',
          })
-
         document.body.appendChild(div);
+        return this.init();
+
+        
 
     }
 

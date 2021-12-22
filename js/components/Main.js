@@ -18,9 +18,10 @@ class Main {
         const main = document.createElement('div');
         main.setAttribute('id', 'main');
         setStyle(main, {
-            position: 'relative',
+            position: 'absolute',
             width: '900px',
             height: '500px',
+            zIndex : '1'
         })
         this.position();
         this.deck.forEach(card => {
