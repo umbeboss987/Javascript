@@ -1,4 +1,8 @@
 import Game from './Game.js';
+import Form from './Form.js';
+import setStyle from '../utils/utils.js'
+
+
 
 window.addEventListener('load', function() {
     this.document.body.style.display = 'flex';
@@ -13,9 +17,7 @@ window.addEventListener('load', function() {
 
 //   let start = game.init();
 
-   document.body.appendChild(game);
+   //document.body.appendChild(game);
+
   // document.body.appendChild(stopWatch);
-
-
-
 })

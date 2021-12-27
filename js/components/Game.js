@@ -7,34 +7,48 @@ class Game {
 
     ready_to_start = false;
     wait = false;
+    main = new Main();
 
     constructor() {
-        let form = new Form();
-        document.body.appendChild(form);
-
+        let form = new Form(); 
         let div = document.createElement('div');
-
+     
          setStyle(div,{
-            zIndex: '0',
+            zIndex: '1',
             backgroundColor: 'rgba(255, 255, 255, 0.9)',
             height: '100vh',
             width: '100vw',
             position: 'absolute',
          })
+     
+         setStyle(form, {
+          top : '20%',
+          left : '40%',
+          float : 'right',
+         })
         document.body.appendChild(div);
-        return this.init();
-
-        
-
+        div.appendChild(form);
+    
+        let button =  form.lastChild;
+        button.addEventListener('click',()=>{
+            if(form.childNodes[1].value.length > 0 && form.childNodes[2].value.length > 0){
+                this.ready_to_start = true;
+                //let body =  document.body.childNodes[3];
+               div.setAttribute('hidden', true);
+               return this.init();
+            } else{
+                window.alert('completa i campi');
+            }
+        })
     }
 
 
     init() {
-        let main = new Main();
         let selected_cards = [];
-        this.ready_to_start = true;
-        if (this.ready_to_start && main) {
-            let cards = main.childNodes;
+        console.log(this.main);
+        if (this.ready_to_start && this.main) {
+            setTimeout(() => this.main.animate_shuffle(), 2000);
+            let cards = this.main.deck;
             cards.forEach(card => {
                 card.addEventListener('click', () => {
                    let  covered = card.getAttribute('state') == 'covered' ? true : false;

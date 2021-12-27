@@ -21,15 +21,15 @@ class Main {
             position: 'absolute',
             width: '900px',
             height: '500px',
-            zIndex : '1'
+            zIndex : '0'
         })
         this.position();
         this.deck.forEach(card => {
             main.appendChild(card);
         })
         this.shuffle();
-        setTimeout(() => this.animate_shuffle(), 2000);
-        return main;
+        //setTimeout(() => this.animate_shuffle(), 2000);
+        document.body.appendChild(main);
     }
 
     position() {
