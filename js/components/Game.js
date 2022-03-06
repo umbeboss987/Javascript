@@ -26,6 +26,7 @@ class Game {
           left : '40%',
           float : 'right',
          })
+         div.setAttribute('id', 'background');
         document.body.appendChild(div);
         div.appendChild(form);
     
@@ -45,11 +46,10 @@ class Game {
 
     init() {
         let selected_cards = [];
-        console.log(this.main);
         if (this.ready_to_start && this.main) {
             setTimeout(() => this.main.animate_shuffle(), 2000);
             let cards = this.main.deck;
-            cards.forEach(card => {
+            cards.forEach((card,i) => {
                 card.addEventListener('click', () => {
                    let  covered = card.getAttribute('state') == 'covered' ? true : false;
                     if (!this.wait && covered == true) {
@@ -79,10 +79,42 @@ class Game {
                             }
                         }
                     }
+                    const final_result = cards.every(card => card.getAttribute('solved') == 'true');
+                    if(final_result){
+                        const stopwatch = document.getElementById("stopwatch").innerHTML;
+                        const result = document.createElement("div");
+                        const showResult = document.createElement('div')
+
+                        setStyle(result,{
+                            zIndex: '2',
+                            backgroundColor: 'white',
+                            height: '50px',
+                            width: '150px',
+                            position: 'absolute',
+                            justifyContent : 'center',
+                            alignItems: 'center',
+                            borderRadius: '20px'
+                         })
+                        setStyle(showResult,{
+                            zIndex: '2',
+                            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                            height: '100vh',
+                            width: '100vw',
+                            position: 'absolute',
+                            justifyContent : 'center',
+                            alignItems: 'center', 
+                            display: 'flex',         
+                         })
+                         result.innerHTML = "Hai finito in" + stopwatch;
+                         showResult.appendChild(result);
+                         document.body.appendChild(showResult);
+
+                    }
                 })
+                
             })
         }
-        return main;
+        //return main;
     }
 }
 

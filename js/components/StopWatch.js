@@ -13,7 +13,7 @@ class StopWatch {
         let minutes = 0;
         const stopWatch = document.createElement('div');
         const minute = document.createElement('div');
-
+        minute.setAttribute('id', 'stopwatch');
         setStyles(minute,{
             heigth: '70px',
             width: '100px',
