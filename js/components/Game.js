@@ -88,12 +88,14 @@ class Game {
                         setStyle(result,{
                             zIndex: '2',
                             backgroundColor: 'white',
-                            height: '50px',
+                            height: '70px',
                             width: '150px',
                             position: 'absolute',
                             justifyContent : 'center',
                             alignItems: 'center',
-                            borderRadius: '20px'
+                            borderRadius: '20px',
+                            textAlign: "center",
+                            fontSize: '30px'
                          })
                         setStyle(showResult,{
                             zIndex: '2',
