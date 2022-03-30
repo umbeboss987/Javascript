@@ -2,8 +2,7 @@
  
  class Card{
      
-    constructor (heigth, width) { 
-      return this.createCard(heigth, width);
+    constructor () { 
     }
 
     createCard(heigth, width){

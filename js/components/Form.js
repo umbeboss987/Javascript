@@ -2,7 +2,6 @@ import setStyle from '../utils/utils.js'
 
 class Form {
     constructor(){
-       return this.createForm();
     }
 
     createForm(){

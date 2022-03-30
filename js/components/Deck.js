@@ -15,9 +15,10 @@ export default class Deck {
      let counter = 0;
      let j = 0;
       for (let i = 0; i < 20; i++) {
-        let card = new Card("130", "130");
+        let card = new Card();
+        let single_card = card.createCard("130", "130");
         //creo le carte
-        this.cards.push(card);
+        this.cards.push(single_card);
         } 
 
         //stilizzo ogni carta

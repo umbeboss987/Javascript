@@ -7,11 +7,9 @@ class Main {
 
     coordinates = [];
     deck = new Deck();
-
+   
 
     constructor() {
-
-        return this.createMain();
     }
 
     createMain() {
@@ -28,7 +26,6 @@ class Main {
             main.appendChild(card);
         })
         this.shuffle();
-        //setTimeout(() => this.animate_shuffle(), 2000);
         document.body.appendChild(main);
     }
 
@@ -71,7 +68,6 @@ class Main {
             cards[i].style.left = this.coordinates[index][1];
             index++;
         }
-
         function cover_cards() {
             cards.forEach((card) => {
                 let cover = document.createElement('img');

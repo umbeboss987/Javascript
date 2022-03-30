@@ -10,23 +10,24 @@ class Game {
     main = new Main();
 
     constructor() {
-        let form = new Form(); 
+        let create_form = new Form(); 
+        let form = create_form.createForm();
         let div = document.createElement('div');
      
-         setStyle(div,{
+        setStyle(div,{
             zIndex: '1',
             backgroundColor: 'rgba(255, 255, 255, 0.9)',
             height: '100vh',
             width: '100vw',
             position: 'absolute',
-         })
+        })
      
-         setStyle(form, {
+        setStyle(form, {
           top : '20%',
           left : '40%',
           float : 'right',
-         })
-         div.setAttribute('id', 'background');
+        })
+        div.setAttribute('id', 'background');
         document.body.appendChild(div);
         div.appendChild(form);
     
@@ -34,8 +35,7 @@ class Game {
         button.addEventListener('click',()=>{
             if(form.childNodes[1].value.length > 0 && form.childNodes[2].value.length > 0){
                 this.ready_to_start = true;
-                //let body =  document.body.childNodes[3];
-               div.setAttribute('hidden', true);
+                div.setAttribute('hidden', true);
                return this.init();
             } else{
                 window.alert('completa i campi');
@@ -46,7 +46,8 @@ class Game {
 
     init() {
         let selected_cards = [];
-        if (this.ready_to_start && this.main) {
+        let main = this.main.createMain();
+        if (this.ready_to_start) {
             setTimeout(() => this.main.animate_shuffle(), 2000);
             let cards = this.main.deck;
             cards.forEach((card,i) => {
@@ -116,7 +117,6 @@ class Game {
                 
             })
         }
-        //return main;
     }
 }
 
